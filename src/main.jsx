@@ -12,7 +12,7 @@ import Main from './pages/Main'
 import SingleArticle from './pages/SingleArticle'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import './styles/register.scss'
+import './styles/login-register.css'
 
 const Layout = () => {
   return (
@@ -55,10 +55,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <div className="web-page">
-      <div className="container">
         <RouterProvider router={router} />
-      </div>
-    </div>
   </StrictMode>,
 )

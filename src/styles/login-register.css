@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.login-container,
+.register-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+}
+
+.login,
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  width: 23rem;
+  height: 27rem;
+  background-color: rgba(34, 34, 34, 0.8);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.register {
+  width: 25rem;
+  height: 30rem;
+}
+
+.login::before,
+.register::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 24rem;
+  height: 28rem;
+  background-image: linear-gradient(0deg, transparent, transparent, #ff0000, #ff0000, #ff0000);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.login::after,
+.register::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 21rem;
+  height: 25rem;
+  background-image: linear-gradient(0deg, transparent, transparent, #ffffff, #ffffff, #ffffff);
+  z-index: 1;
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form-login-background {
+  width: 22.5rem;
+  height: 26.5rem;
+
+  position: relative;
+  z-index: 2;
+  background-color: rgb(34, 34, 34);
+  border-radius: 0.5rem;
+}
+
+.form-register-background {
+  width: 24.5rem;
+  height: 29.5rem;
+  
+  position: relative;
+  z-index: 2;
+  background-color: rgb(34, 34, 34);
+  border-radius: 0.5rem;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 22.5rem;
+  height: 26.5rem;
+
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.5rem;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 24.5rem;
+  height: 29.5rem;
+
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.5rem;
+}
+
+.login-header {
+  padding: 0 0 2.5rem 0;
+  color: rgb(255, 255, 255);
+}
+
+.register-header {
+  padding: 2rem 0 1rem 0;
+  color: rgb(255, 255, 255);
+}
+
+.input-email-login-register,
+.input-password-login-register  {
+  margin: 1rem;
+  padding: 0.5rem;
+  width: 18rem;
+  height: 3rem;
+  outline: none;
+
+  background-color: #2c2f33;
+  caret-color: white;
+  color: white;
+
+  border: none;
+  border-bottom: 1px solid #555;
+  border-radius: 0.2rem;
+
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease-in-out; 
+}
+
+.input-email-login-register:focus {
+  border: 2px solid #ff0000;
+}
+
+.input-password-login-register {
+  width: 16rem;
+  height: 2.5rem;
+  margin: 0;
+  padding-bottom: 0;
+  border: none;
+}
+
+.visibility {
+  width: 18rem;
+  height: 3rem;
+  margin: 1rem;
+  background-color: #2c2f33;
+  caret-color: white;
+  color: white;
+  border-bottom: 1px solid #555;
+  border-radius: 0.2rem;
+
+  display: flex;
+
+  transition: border-color 0.3s ease-in-out; 
+}
+
+.visibility-icon {
+  margin: 0;
+  padding-right: 0.8rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.visibilityOn {
+  cursor: pointer;
+  display: none;
+}
+
+.visibilityOff {
+  cursor: pointer;
+}
+
+.visibility:focus-within {
+  border: 2px solid #ff0000;
+}
+
+.btn-login,
+.btn-register {
+  margin: 1rem 0 1rem 0;
+  width: 5.3rem;
+  height: 2.3rem;
+  cursor: pointer;
+  outline: none;
+
+  background-color: #ff0000;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.2rem;
+
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+
+.btn-register {
+  margin: 1rem 0 0.5rem 0;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+  border: 2px solid white;
+  transform: scale(1.05);
+}
+
+span {
+  margin: 1rem 0 3rem 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.link-login,
+.link-register {
+  margin: 0.5rem 0 0 0;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  outline: none;
+  transition: color 0.2s ease-in-out, transform 0.1s;
+}
+
+.link-register {
+  margin: 1rem 0 0 0;
+}
+
+.link-login:hover,
+.link-register:hover {
+  color:#ff0000;
+}
+
+
