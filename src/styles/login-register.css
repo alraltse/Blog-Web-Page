@@ -109,6 +109,10 @@
   border-radius: 0.5rem;
 }
 
+.form-login:focus-visible {
+  border: 2px solid #ff0000;
+}
+
 .form-register {
   display: flex;
   flex-direction: column;
@@ -135,7 +139,8 @@
 }
 
 .input-email-login-register,
-.input-password-login-register  {
+.input-password-login-register,
+.input-name-login-register  {
   margin: 1rem;
   padding: 0.5rem;
   width: 18rem;
@@ -154,7 +159,8 @@
   transition: border-color 0.3s ease-in-out; 
 }
 
-.input-email-login-register:focus {
+.input-email-login-register:focus,
+.input-name-login-register:focus {
   border: 2px solid #ff0000;
 }
 
@@ -168,7 +174,7 @@
 
 .visibility {
   width: 18rem;
-  height: 3rem;
+  height: 2.9rem;
   margin: 1rem;
   background-color: #2c2f33;
   caret-color: white;
@@ -183,19 +189,10 @@
 
 .visibility-icon {
   margin: 0;
-  padding-right: 0.8rem;
   height: 3rem;
-  display: flex;
-  align-items: center;
-}
-
-.visibilityOn {
-  cursor: pointer;
   display: none;
-}
-
-.visibilityOff {
-  cursor: pointer;
+  align-items: center;
+  cursor: pointer
 }
 
 .visibility:focus-within {
