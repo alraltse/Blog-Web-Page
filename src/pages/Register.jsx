@@ -59,7 +59,8 @@ export default function Register() {
         setVisibility(false)
     }
 
-    function handleSignUpClick() {
+    function handleSignUpClick(event) {
+        event.preventDefault()
         if ((!formik.errors.name && !formik.errors.email && !formik.errors.password) && (formik.values.name !== "" && formik.values.email !== "" && formik.values.password !== "")) {
             navigate("/main")
         }
@@ -146,8 +147,8 @@ export default function Register() {
                         onClick={handleSignUpClick}>
                             Sign up
                         </button>
-                        <span>Already have an account? 
-                            <Link to="/login" className="link-register">Sign in</Link></span>
+                        <span>Already have an account?
+                            <Link to="/login" className="link-register"> Sign in</Link></span>
                     </form>
                 </div>
             </div>

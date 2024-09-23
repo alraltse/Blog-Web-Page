@@ -6,7 +6,7 @@ export default function Navbar() {
             <div className="container">
                 <div className="logo">logo</div>
                 <div className="links">
-                    <Link className="link">Art</Link>
+                    <Link className="link">Sign in</Link>
                 </div>
             </div>
         </div>

@@ -13,6 +13,8 @@ import SingleArticle from './pages/SingleArticle'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import './styles/login-register.css'
+import './styles/home.css'
+import './styles/navbar.css'
 
 const Layout = () => {
   return (
