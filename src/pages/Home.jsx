@@ -17,8 +17,12 @@ export default function Home() {
     const [movieTen, setMovieTen] = useState([])
     const [movieEleven, setMovieEleven] = useState([])
     const [movieTwelve, setMovieTwelve] = useState([])
+    const [movieThirteen, setMovieThirteen] = useState([])
+    const [movieFourteen, setMovieFourteen] = useState([])
 
     const movieRef = useRef()
+
+    const movieOneRef = useRef()
 
     const handleMoviesOrder = (direction) => {
         if (direction === 'left') {
@@ -26,6 +30,15 @@ export default function Home() {
         } else if (direction === 'right') {
             movieRef ? (movieRef.current.scrollLeft -= 213) : null
         }
+    }
+
+    const handleMouseEnter = () => {
+        movieOneRef.current.style.opacity = "0.2"
+        movieOneRef.current.style.transition = "0.3s ease-in"
+    }
+
+    const handleMouseLeave = () => {
+        movieOneRef.current.style.opacity = "1"
     }
 
     useEffect(() => {
@@ -38,7 +51,7 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieOne()
+    fetchMovieOne()
  }, [])
 
     useEffect(() => {
@@ -51,7 +64,7 @@ export default function Home() {
                 console.log(err)
             }
         }
-        // fetchMovieTwo()
+        fetchMovieTwo()
  }, [])
 
     useEffect(() => {
@@ -64,7 +77,7 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieThree()
+    fetchMovieThree()
 }, [])
 
     useEffect(() => {
@@ -77,7 +90,7 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieFour()
+    fetchMovieFour()
     }, [])
 
     useEffect(() => {
@@ -90,7 +103,7 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieFive()
+    fetchMovieFive()
     }, [])
 
     useEffect(() => {
@@ -103,7 +116,7 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieSix()
+    fetchMovieSix()
     }, [])
 
     useEffect(() => {
@@ -116,7 +129,7 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieSeven()
+    fetchMovieSeven()
     }, [])
 
     useEffect(() => {
@@ -129,7 +142,7 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieEight()
+    fetchMovieEight()
     }, [])
 
     useEffect(() => {
@@ -142,7 +155,7 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieNine()
+    fetchMovieNine()
     }, [])
 
     useEffect(() => {
@@ -155,9 +168,8 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieTen()
+    fetchMovieTen()
     }, [])
-
 
     useEffect(() => {
         const fetchMovieEleven = async() => {
@@ -169,7 +181,7 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieEleven()
+    fetchMovieEleven()
     }, [])
 
     useEffect(() => {
@@ -182,62 +194,96 @@ export default function Home() {
             console.log(err)
         }
     }
-    // fetchMovieTwelve()
+    fetchMovieTwelve()
+    }, [])
+
+    useEffect(() => {
+        const fetchMovieThirteen = async() => {
+        try {
+            const response = await fetch(`http://www.omdbapi.com/?i=tt0250494&apikey=${myApiKey}`)
+            const data = await response.json()
+            setMovieThirteen(data)
+        } catch(err) {
+            console.log(err)
+        }
+    }
+    fetchMovieThirteen()
+    }, [])
+
+    useEffect(() => {
+        const fetchMovieFourteen = async() => {
+        try {
+            const response = await fetch(`http://www.omdbapi.com/?i=tt30446769&apikey=${myApiKey}`)
+            const data = await response.json()
+            setMovieFourteen(data)
+        } catch(err) {
+            console.log(err)
+        }
+    }
+    fetchMovieFourteen()
     }, [])
 
     return (
         <div className="home-container">
             <div className="movies-container" ref={movieRef}>
-                <div className="movie-poster" id="movieOne">
-                    <img className="movie-image" src={movieOne.Poster} alt={movieOne.Title} />
+                <div className="movie-poster">
+                    <img className="movie-image" src={movieOne.Poster} alt={movieOne.Title} ref={movieOneRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
                     <p className="movie-name">{movieOne.Title}, {movieOne.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieTwo">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieTwo.Poster} alt={movieTwo.Title} />
                     <p className="movie-name">{movieTwo.Title}, {movieTwo.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieThree">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieThree.Poster} alt={movieThree.Title} />
                     <p className="movie-name">{movieThree.Title}, {movieThree.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieFour">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieFour.Poster} alt={movieFour.Title} />
                     <p className="movie-name">{movieFour.Title}, {movieFour.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieFive">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieFive.Poster} alt={movieFive.Title} />
                     <p className="movie-name">{movieFive.Title}, {movieFive.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieSix">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieSix.Poster} alt={movieSix.Title} />
                     <p className="movie-name">{movieSix.Title}, {movieSix.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieSeven">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieSeven.Poster} alt={movieSeven.Title} />
                     <p className="movie-name">{movieSeven.Title}, {movieSeven.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieEight">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieEight.Poster} alt={movieEight.Title} />
                     <p className="movie-name">{movieEight.Title}, {movieEight.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieNine">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieNine.Poster} alt={movieNine.Title} />
                     <p className="movie-name">{movieNine.Title}, {movieNine.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieTen">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieTen.Poster} alt={movieTen.Title} />
                     <p className="movie-name">{movieTen.Title}, {movieTen.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieTen">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieEleven.Poster} alt={movieEleven.Title} />
                     <p className="movie-name">{movieEleven.Title}, {movieEleven.Year}</p>
                 </div>
-                <div className="movie-poster" id="movieTen">
+                <div className="movie-poster">
                     <img className="movie-image" src={movieTwelve.Poster} alt={movieTwelve.Title} />
                     <p className="movie-name">{movieTwelve.Title}, {movieTwelve.Year}</p>
                 </div>
-                <span className="forward-span"><ArrowForward onTrigger={() => handleMoviesOrder('left')}/></span>
-                <span className="backward-span"><ArrowBackward  onTrigger={() => handleMoviesOrder('right')}/></span>
+                <div className="movie-poster">
+                    <img className="movie-image" src={movieThirteen.Poster} alt={movieThirteen.Title} />
+                    <p className="movie-name">{movieThirteen.Title}, {movieThirteen.Year}</p>
+                </div>
+                <div className="movie-poster">
+                    <img className="movie-image" src={movieFourteen.Poster} alt={movieFourteen.Title} />
+                    <p className="movie-name">{movieFourteen.Title}, {movieFourteen.Year}</p>
+                </div>
+                <span className="forward-span" onClick={() => handleMoviesOrder('left')}><ArrowForward /></span>
+                <span className="backward-span" onClick={() => handleMoviesOrder('right')}><ArrowBackward /></span>
             </div>
         </div>
     )

@@ -22,11 +22,16 @@
 .movie-image {
     height: 16rem;
     width: 11rem;
+
+    cursor: pointer;
 }
 
 .movie-name {
     width: 11rem;
     height: 3rem;
+
+    padding-top: 0.5rem;
+    text-align: center;
 }
 
 .forward-span {
@@ -45,6 +50,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }
 
 .backward-span {
@@ -63,8 +70,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.arrow-btn {
     cursor: pointer;
 }
