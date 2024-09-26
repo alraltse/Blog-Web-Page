@@ -1,6 +1,7 @@
 .navbar {
     padding: 1.5rem 5rem 1.5rem 3rem;
-    /* background-color: #121212; */
+    background-color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -28,7 +29,8 @@
 
 .links:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 5px rgb(142, 8, 8);
+    background-color: #ff4747;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 .links:active {
@@ -39,4 +41,8 @@
 .logo-img {
     height: 3rem;
     width: 12rem;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
 }

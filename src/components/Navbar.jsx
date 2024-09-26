@@ -6,7 +6,7 @@ export default function Navbar() {
             <div className="container">
                 <div className="logo"><img className="logo-img" src="src/assets/login-icon.png" /></div>
                 <div className="links">
-                    <Link className="link">Sign in</Link>
+                    <Link className="link" to="/login">Sign in</Link>
                 </div>
             </div>
         </div>
