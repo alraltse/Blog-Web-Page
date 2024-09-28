@@ -20,10 +20,9 @@ export default function Home() {
     const [movieTwelve, setMovieTwelve] = useState([])
     const [movieThirteen, setMovieThirteen] = useState([])
     const [movieFourteen, setMovieFourteen] = useState([])
+    const [div, setDiv] = useState()
 
     const movieRef = useRef()
-
-    const [div, setDiv] = useState()
 
     const handleMoviesOrder = (direction) => {
         if (direction === 'left') {
@@ -51,20 +50,20 @@ export default function Home() {
                 </div>
             </div>
         )
-}
+    }
 
     useEffect(() => {
         const fetchMovieOne = async() => {
-        try {
-            const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${myApiKey}`)
-            const data = await response.json()
-            setMovieOne(data)
-        } catch(err) {
-            console.log(err)
+            try {
+                const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=${myApiKey}`)
+                const data = await response.json()
+                setMovieOne(data)
+            } catch(err) {
+                console.log(err)
+            }
         }
-    }
-    fetchMovieOne()
- }, [])
+        fetchMovieOne()
+    }, [])
 
     useEffect(() => {
         const fetchMovieTwo = async() => {
