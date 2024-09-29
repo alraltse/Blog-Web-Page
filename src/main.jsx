@@ -12,9 +12,13 @@ import Main from './pages/Main'
 import SingleArticle from './pages/SingleArticle'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { SearchProvider } from './components/SearchContext'
 import './styles/login-register.css'
 import './styles/home.css'
 import './styles/navbar.css'
+import './styles/footer.css'
+import './styles/navbar.css'
+import './styles/singleArticle.css'
 
 const Layout = () => {
   return (
@@ -56,7 +60,9 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
+  <StrictMode>
+      <SearchProvider>
         <RouterProvider router={router} />
-  // </StrictMode>
+      </SearchProvider>
+  </StrictMode>
 )

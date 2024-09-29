@@ -1,20 +1,28 @@
 import { Link } from "react-router-dom"
-import { useState, useEffect, useRef } from "react"
+import { useContext, useRef} from "react"
 import SearchIcon from "../assets/search-icon"
+import { useNavigate } from "react-router-dom"
+import { SearchContext } from "./SearchContext"
 
-let searchData;
+const myApiKey = '2f2d1988'
 
 export default function Navbar() {
     const inputData = useRef()
+    const navigate = useNavigate()
+
+    const { searchData, setSearchData } = useContext(SearchContext)
 
     const fetchSearch = async() => {
-        const response = await fetch(`http://www.omdbapi.com/?t=${inputData.current.value}&apikey=2f2d1988`)
-        const data = await response.json()
-        searchData = data;
-        console.log(searchData)
+        if (inputData.current.value !== "") {
+            const response = await fetch(`http://www.omdbapi.com/?t=${inputData.current.value}&plot=full&apikey=${myApiKey}`)
+            const data = await response.json()
+            setSearchData(data);
+            console.log(data)
+            navigate('/post/:id')
+        } else {
+            console.log('Search field is empty.')
+        }
     }
-
-
 
     return (
         <div className="navbar">
