@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import ArrowForward from "../assets/arrow-forward"
 import ArrowBackward from "../assets/arrow-backward"
 import CloseBtn from "../assets/close-btn"
+import HarryPotterSpells from "../components/harryPotterSpells"
 
 const myApiKey = '2f2d1988'
 
@@ -36,7 +37,6 @@ export default function Home() {
         setDiv(
             <div key={index} className="movieInfo">
                 <button className="close-btn" onClick={() => setDiv(null)}><CloseBtn /></button>
-                {/* <img src={movie.Poster} /> */}
                 <div className="plot">
                     <h2 className="movie-header">{movie.Title}</h2>
                     <div className="movie-span-container">
@@ -296,6 +296,9 @@ export default function Home() {
                 </div>
                 <span className="forward-span" onClick={() => handleMoviesOrder('left')}><ArrowForward /></span>
                 <span className="backward-span" onClick={() => handleMoviesOrder('right')}><ArrowBackward /></span>
+            </div>
+            <div className="second-container">
+            <HarryPotterSpells />
             </div>
         </div>
     )

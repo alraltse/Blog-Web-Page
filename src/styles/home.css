@@ -15,7 +15,7 @@
 }
 
 .movie-poster {
-    padding: 2rem 1rem;
+    padding: 0.5rem 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,7 +116,6 @@
     height: 3rem;
     width: 3rem;
     margin: 0;
-    /* background-color: #4c4c4c4b;  */
     background-color: #ff0000;
 
     position: absolute;
@@ -146,4 +145,34 @@
 .forward-span:hover, .backward-span:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+}
+
+.spells-image-container {
+    padding: 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    border-radius: 0.5rem;
+}
+
+.spells-image {
+    height: 9rem;
+    width: 17rem;
+    border-radius: 0.5rem;
+}
+
+.name-container {
+    width: 17rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    padding: 1rem;
 }
