@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react"
 import ArrowForward from "../assets/arrow-forward"
 import ArrowBackward from "../assets/arrow-backward"
 import CloseBtn from "../assets/close-btn"
-import HarryPotterSpells from "../components/harryPotterSpells"
 
 const myApiKey = '2f2d1988'
 
@@ -298,7 +297,6 @@ export default function Home() {
                 <span className="backward-span" onClick={() => handleMoviesOrder('right')}><ArrowBackward /></span>
             </div>
             <div className="second-container">
-            <HarryPotterSpells />
             </div>
         </div>
     )
