@@ -11,11 +11,10 @@ export default function Navbar() {
     const inputData = useRef()
     const navigate = useNavigate()
 
-    const { searchData, setSearchData } = useContext(SearchContext)
+    const {setSearchData} = useContext(SearchContext)
 
     const [query, setQuery] = useState("")
     const [suggestions, setSuggestions] = useState([])
-    const [selectedMovie, setSelectedMovie] = useState(null)
 
     useEffect(() => {
         const fetchSuggestions = async() => {
@@ -35,7 +34,6 @@ export default function Navbar() {
     }, [query])
 
     const handleSelectMovie = (movie) => {
-        setSelectedMovie(movie)
         setQuery(movie.Title)
         setSuggestions([])
     }
@@ -55,7 +53,7 @@ export default function Navbar() {
     return (
         <div className="navbar">
             <div className="container">
-                <div className="logo"><img className="logo-img" src="src/assets/logo.png" /></div>
+                <div className="logo"><img className="logo-img" src="src/assets/logo.png" onClick={() => navigate('/')} /></div>
                 <div className="grouped-items">
                 <div className="search-field">
                     <div>
