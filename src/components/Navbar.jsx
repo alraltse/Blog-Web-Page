@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { useContext, useEffect, useRef} from "react"
 import SearchIcon from "../assets/search-icon"
+import SearchIconMedia from "../assets/search-icon-media"
 import { useNavigate } from "react-router-dom"
 import { SearchContext } from "./SearchContext"
 import { useState } from "react"
@@ -78,7 +79,7 @@ export default function Navbar() {
                         </ul>
                     )}
                 </div>
-                    <span className="search-icon-span"><SearchIcon onTrigger={fetchSearch} /></span>
+                    <span className="search-icon-span"><SearchIcon onTrigger={fetchSearch} /><SearchIconMedia onTrigger={fetchSearch} /></span>
                 </div>
                 <div className="links">
                     <Link className="link" to="/login">Sign in</Link>
