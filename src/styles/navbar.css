@@ -43,7 +43,6 @@
 
 .search-field {
     height: 2rem;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,3 +101,32 @@
     transform: scale(1);
     box-shadow: 0 0 2px rgb(142, 8, 8);
 }
+
+.suggestions-list {
+    position: absolute;
+    width: 12rem;
+    max-height: 200px;
+    overflow-y: auto;
+    background: #000000;
+    color: #ffffff;
+    font-size: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    padding: 0;
+    list-style-type: none;
+    z-index: 100;
+}
+
+.suggestions-list li {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #ffffff;
+    color: #ff0000;
+    font-weight: 600;
+}
+
+

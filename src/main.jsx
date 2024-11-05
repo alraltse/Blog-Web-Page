@@ -8,7 +8,6 @@ import {
 import Home from './pages/Home'
 import Register from './pages/Register'
 import Login from './pages/Login'
-import Main from './pages/Main'
 import SingleArticle from './pages/SingleArticle'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -38,10 +37,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />
-      },
-      {
-        path: "/main",
-        element: <Main />
       },
       {
         path: "/post/:id",

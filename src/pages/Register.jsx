@@ -62,7 +62,7 @@ export default function Register() {
     function handleSignUpClick(event) {
         event.preventDefault()
         if ((!formik.errors.name && !formik.errors.email && !formik.errors.password) && (formik.values.name !== "" && formik.values.email !== "" && formik.values.password !== "")) {
-            navigate("/main")
+            navigate("/")
         }
     }
 

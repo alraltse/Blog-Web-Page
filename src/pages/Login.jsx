@@ -58,7 +58,7 @@ export default function Login() {
     function handleSignInClick(event) {
         event.preventDefault()
         if ((!formik.errors.password && !formik.errors.email) && (formik.values.email !== "" && formik.values.password !== "")) {
-            navigate("/main")
+            navigate("/")
         }
     }
 
