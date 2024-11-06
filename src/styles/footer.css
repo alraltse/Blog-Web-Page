@@ -17,3 +17,38 @@
 b {
     color: #ff0000;
 }
+
+/* @media (max-width: 400px) {
+    .footer {
+        padding: 1rem 2vw;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+    }
+
+    .logo-img {
+        height: 1.8rem;
+    }
+} */
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 1rem 3vw;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
+
+    .logo-img {
+        height: 2rem;
+        margin-bottom: 0.5rem;
+    }
+}
