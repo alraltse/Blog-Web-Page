@@ -118,9 +118,7 @@
     background-color: #ff0000;
 
     position: absolute;
-    top: 40%;
-    left: 98%;
-    translate: -50% -40%;
+    top: 35%;
 
     border-radius: 50%;
 
@@ -144,4 +142,62 @@
 .forward-span:hover, .backward-span:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+}
+
+@media (max-width: 400px) {
+    .home-container {
+        padding: 1rem;
+    }
+
+    .movies-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+
+    .movie-image {
+        height: 10rem;
+        width: 7rem;
+    }
+
+    .movie-name {
+        font-size: 0.9rem;
+        width: 7rem;
+        padding: 0.5rem 0;
+    }
+
+    .forward-span, .backward-span {
+        display: none;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+    .home-container {
+        padding: 1rem;
+    }
+
+    .movies-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+
+    .movie-image {
+        height: 12.5rem;
+        width: 9rem;
+    }
+
+    .movie-name {
+        font-size: 1rem;
+        width: 7rem;
+        padding: 0.5rem 0;
+    }
+
+    .forward-span, .backward-span {
+        display: none;
+    }
 }
