@@ -43,8 +43,7 @@ export default function Navbar() {
         if (inputData.current.value !== "") {
             const response = await fetch(`http://www.omdbapi.com/?t=${inputData.current.value}&plot=full&apikey=${myApiKey}`)
             const data = await response.json()
-            setSearchData(data);
-            console.log(data)
+            setSearchData(data)
             navigate('/post/:id')
         } else {
             console.log('Search field is empty.')

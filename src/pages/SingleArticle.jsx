@@ -4,6 +4,7 @@ import { SearchContext } from "../components/SearchContext"
 export default function SingleArticle() {
     const { searchData } = useContext(SearchContext)
 
+    console.log(searchData)
     return (
         <div className="single-article-container">
             {searchData 
@@ -18,7 +19,11 @@ export default function SingleArticle() {
                             <li>{searchData.Genre}</li>
                             <li>{searchData.Runtime}</li>
                         </ul>
-                        <p className="movie-rating">{searchData.Ratings[0]?.Value}</p>
+                        {
+                        searchData.Ratings.length != 0
+                        ? <p className="movie-rating">{searchData.Ratings[0]?.Value}</p>
+                        : <p></p>
+                        }
                         <i className="movie-overview-heading">Overview</i>
                         <p className="movie-overview">{searchData.Plot}</p>
                     </div>
