@@ -149,12 +149,37 @@
         padding: 1rem;
     }
 
+    .movieInfo {
+        width: 20rem;
+        height: 25rem;
+    }
+    
+    .close-btn {    
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
     .movies-container {
         flex-direction: column;
         align-items: center;
         padding: 1rem 0;
         max-height: 95vh;
         overflow-y: auto;
+    }
+
+    .movie-span-container {
+        gap: 0.2rem;
+    }
+    
+    .movie-span {
+        height: auto;
+        width: auto;
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .movie-image {
@@ -178,6 +203,26 @@
         padding: 1rem;
     }
 
+    .movieInfo {
+        width: 20rem;
+        height: 25rem;
+    }
+
+    .movie-span-container {
+        gap: 0.2rem;
+    }
+    
+    .movie-span {
+        height: auto;
+        width: auto;
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .movies-container {
         flex-direction: column;
         align-items: center;
@@ -199,5 +244,27 @@
 
     .forward-span, .backward-span {
         display: none;
+    }
+}
+
+@media (min-width: 600px) and  (max-width: 1000px) {
+    .movieInfo {
+        width: 28rem;
+        height: 25rem;
+    }
+
+    .movie-span-container {
+        gap: 0.2rem;
+    }
+    
+    .movie-span {
+        height: auto;
+        width: auto;
+        margin: 0;
+        padding: 0.5rem;
+        font-size: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
