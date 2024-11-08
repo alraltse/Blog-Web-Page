@@ -4,7 +4,6 @@ import { SearchContext } from "../components/SearchContext"
 export default function SingleArticle() {
     const { searchData } = useContext(SearchContext)
 
-    console.log(searchData)
     return (
         <div className="single-article-container">
             {searchData 

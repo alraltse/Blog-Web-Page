@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { SearchContext } from "./SearchContext"
 import { useState } from "react"
 
-const myApiKey = '2f2d1988'
+const myApiKey = import.meta.env.VITE_API_KEY
 
 export default function Navbar() {
     const inputData = useRef()

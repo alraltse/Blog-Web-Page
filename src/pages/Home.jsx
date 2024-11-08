@@ -3,7 +3,7 @@ import ArrowForward from "../assets/arrow-forward"
 import ArrowBackward from "../assets/arrow-backward"
 import CloseBtn from "../assets/close-btn"
 
-const myApiKey = '2f2d1988'
+const myApiKey = import.meta.env.VITE_API_KEY;
 
 export default function Home() {
     const [movies, setMovies] = useState([])
